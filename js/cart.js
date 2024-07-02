@@ -13,12 +13,14 @@ const cart = {
     this.count = this.count + number;
   },
 
-  add(itemName, itemPrice, itemCount = 1) {
-    this.items.push({itemName,itemPrice,itemCount});
-  },
-
   calculateItemPrice() {
     this.totalPrice = this.items.reduce((acc, price) => acc + price.itemPrice, 0)
+  },
+
+  add(itemName, itemPrice, itemCount = 1) {
+    this.items.push({itemName,itemPrice,itemCount});
+    this.increaseCount(itemCount);
+    this.calculateItemPrice();
   },
 
   clear() {
