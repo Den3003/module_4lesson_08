@@ -21,6 +21,7 @@ const cart = {
     this.items.push({itemName,itemPrice,itemCount});
     this.increaseCount(itemCount);
     this.calculateItemPrice();
+    this.getTotalPrice();
   },
 
   clear() {
