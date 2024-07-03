@@ -36,3 +36,9 @@ const cart = {
   }
 
 }
+
+cart.add('Ручка', 15);
+cart.add('Карандаш', 20, 2);
+cart.add('Стиралка', 30, 5);
+
+cart.print();
