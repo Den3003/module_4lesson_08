@@ -2,31 +2,30 @@
 
 const cart = {
   items: [],
-  totalPrice: 0,
   count: 0,
 
-  getTotalPrice() {
-    return this.totalPrice
-  },
 
   increaseCount(number) {
     this.count = this.count + number;
   },
 
   calculateItemPrice() {
-    this.totalPrice = this.items.reduce((acc, price) => acc + price.itemPrice, 0)
+    return this.items.reduce((acc, price) => acc + price.itemPrice, 0)
   },
+
+  get totalPrice() {
+    return this.calculateItemPrice();
+  },
+
+  set totalPrice(value) {},
 
   add(itemName, itemPrice, itemCount = 1) {
     this.items.push({itemName,itemPrice,itemCount});
     this.increaseCount(itemCount);
-    this.calculateItemPrice();
-    this.getTotalPrice();
   },
 
   clear() {
     this.items = [];
-    this.totalPrice = 0;
     this.count = 0;
   },
 
@@ -40,5 +39,6 @@ const cart = {
 cart.add('Ручка', 15);
 cart.add('Карандаш', 20, 2);
 cart.add('Стиралка', 30, 5);
+
 
 cart.print();
