@@ -24448,6 +24448,17 @@ const listIPv4 = [
   "10.0.32.20"
 ];
 
+const getCountUniqIp = (arr) => {
 
-const getCountUniqIp = (arr) => [...new Set(arr)].length;
-console.log('getCountUniqIp: ', getCountUniqIp(listIPv4));
+  return arr.reduce((acc, item) => {
+
+    if (arr.indexOf(item) === arr.lastIndexOf(item)) {
+      acc++;
+    }
+
+    return acc
+  }, 0)
+
+};
+
+console.log(getCountUniqIp(listIPv4));
