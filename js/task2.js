@@ -24449,10 +24449,6 @@ const listIPv4 = [
 ];
 
 
-const getCountUniqIp = (arr) => {
-
-  return new Set(arr).size;
-
-};
+const getCountUniqIp = arr => new Set(arr).size;
 
 console.log(getCountUniqIp(listIPv4));
