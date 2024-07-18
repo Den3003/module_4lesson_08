@@ -1,32 +1,32 @@
 'use strict';
 
 const rectangle = {
-  width: 5,
-  height: 5,
+  _width: 5,
+  _height: 5,
 
-  get perimeterRectangle() {
-    return `Периметр = ${((this.width + this.height) * 2) + ' см'}`;
+  get perimeter() {
+    return `Периметр = ${((this._width + this._height) * 2) + ' см'}`;
   },
 
-  get areaRectangle() {
-    return `Площадь = ${(this.width * this.height) + ' см'}`;
+  get area() {
+    return `Площадь = ${(this._width * this._height) + ' см'}`;
   },
 
-  set widthRectangle(value) {
+  set width(value) {
     if (typeof value === 'number') {
-      this.width = value;
+      this._width = value;
     }
   },
 
-  set heightRectangle(value) {
+  set height(value) {
     if (typeof value === 'number') {
-      this.height = value;
+      this._height = value;
     }
   },
 };
 
-console.log(rectangle.perimeterRectangle);
-console.log(rectangle.areaRectangle);
-rectangle.widthRectangle = 10;
-console.log(rectangle.perimeterRectangle);
-console.log(rectangle.areaRectangle);
+console.log(rectangle.perimeter);
+console.log(rectangle.area);
+rectangle.width = 10;
+console.log(rectangle.perimeter);
+console.log(rectangle.area);
